@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-0a-TDM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <items>
+                                    <barButtonItem style="plain" id="P79-uf-rib">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="U7P-0A-laF">
+                                            <rect key="frame" x="16" y="7" width="288" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="changeAddress:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="QPf-RI-6Rs"/>
+                                                <action selector="exitTextField:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="ig1-Fa-Zvq"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-4J-BUo">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <items>
+                                    <barButtonItem image="home.png" id="tDh-P3-RIL">
+                                        <connections>
+                                            <action selector="goHome:" destination="vXZ-lx-hvc" id="M9V-nT-jTm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bIw-gW-oNB"/>
+                                    <barButtonItem image="goBack.png" id="BP9-9m-hEt">
+                                        <connections>
+                                            <action selector="goBack" destination="F9V-Gk-QQJ" id="4WG-Xr-WoV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="goForward.png" id="y5v-aC-Zmv">
+                                        <connections>
+                                            <action selector="goForward" destination="F9V-Gk-QQJ" id="wXM-T9-1Ki"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="reload.png" id="sWb-7U-WwQ">
+                                        <connections>
+                                            <action selector="reload" destination="F9V-Gk-QQJ" id="2Md-qN-Uqh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="stopLoading.png" id="FFp-xh-ZwB">
+                                        <connections>
+                                            <action selector="stopLoading" destination="F9V-Gk-QQJ" id="yyj-8J-zH1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hY9-BX-5jV"/>
+                                    <barButtonItem image="safari.png" id="tfh-i0-4JF">
+                                        <connections>
+                                            <action selector="sendSafari:" destination="vXZ-lx-hvc" id="gkW-A4-BgN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9V-Gk-QQJ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="kaR-PN-cIf"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6km-EK-24j">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="aiIndicator" destination="6km-EK-24j" id="99N-QC-noC"/>
+                        <outlet property="biGoBack" destination="BP9-9m-hEt" id="8xf-UG-9F4"/>
+                        <outlet property="biGoForward" destination="y5v-aC-Zmv" id="Tn4-de-nqA"/>
+                        <outlet property="tfAddress" destination="U7P-0A-laF" id="l0b-5X-dst"/>
+                        <outlet property="wvWeb" destination="F9V-Gk-QQJ" id="dfB-9A-osA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-39"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="goBack.png" width="15" height="24"/>
+        <image name="goForward.png" width="15" height="24"/>
+        <image name="home.png" width="24" height="24"/>
+        <image name="reload.png" width="24" height="24"/>
+        <image name="safari.png" width="24" height="18"/>
+        <image name="stopLoading.png" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
